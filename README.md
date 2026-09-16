@@ -27,7 +27,8 @@ proyecto_fullstack/
 - ✅ Backend REST API with full CRUD (Create, Read, Update, Delete), tested against a real PostgreSQL database
 - ✅ SQL injection protection via parameterized queries
 - ✅ Environment variables for database credentials (`.env`, not committed)
-- 🔲 Frontend UI scaffolded, not yet connected to the API
+- ✅ Frontend connected to the backend: fetches and displays tasks on load, and creates new tasks through the UI
+- 🔲 Edit / delete actions not yet wired up in the UI (available in the API)
 - 🔲 Deployment
 
 This project is under active development — see the roadmap below.
@@ -108,7 +109,7 @@ The app will be available at `http://localhost:5173`.
 
 ## Roadmap
 
-- [ ] Connect the React frontend to the backend API
+- [ ] Wire up edit / delete actions in the UI
 - [ ] Move to a `.env`-based config with sensible defaults
 - [ ] Deploy backend and frontend
 - [ ] Add automated tests
