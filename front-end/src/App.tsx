@@ -19,7 +19,7 @@ function App() {
   // eslint-disable-next-line
   useEffect(() => { cargarTareas(); }, []);
 
-  const [titulo, setTitulo] = useState<string>("");
+  const [titulo, setTitulo] = useState("");
 
   async function agregarTarea() {
     await fetch("http://localhost:3000/tareas", {
@@ -31,6 +31,14 @@ function App() {
     cargarTareas();
   }
 
+  async function borrarTarea(id:number) {
+    await fetch(`http://localhost:3000/tareas/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" }
+    });
+    cargarTareas();
+  }
+
   return (
     <>
       <h1>Tareas</h1>
@@ -39,6 +47,7 @@ function App() {
         {tareas.map((tarea) => (
           <li key={tarea.id}>
             {tarea.titulo} {tarea.hecha ? "✅" : "❌"}
+            <button onClick={()=>borrarTarea(tarea.id)}>Borrar</button>
           </li>
         ))}
       </ul>
